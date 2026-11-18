@@ -1,6 +1,7 @@
 import { Sora, Aref_Ruqaa, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { URL_ } from "../lib/site";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 const sora = Sora({ subsets: ["latin"], variable: "--f-sans" });
 const ruqaa = Aref_Ruqaa({ subsets: ["arabic", "latin"], weight: ["400", "700"], variable: "--f-ar" });
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--f-serif" });
@@ -16,5 +17,5 @@ const ld = { "@context": "https://schema.org", "@type": "Person", name: "Riluwan
   knowsAbout: ["Performance marketing", "Meta Ads", "Lead generation", "Video editing", "SEO", "Answer engine optimization", "Generative engine optimization", "WordPress", "Next.js"] };
 export default function Root({ children }) {
   return (<html lang="en" className={`${sora.variable} ${ruqaa.variable} ${serif.variable}`}><body>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />{children}</body></html>);
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />{children}<SpeedInsights /></body></html>);
 }
